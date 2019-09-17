@@ -8,3 +8,8 @@ Recuerden instalar los paquetes de node
 ```
 npm install
 ```
+
+## Instalaciones hechas
+Yargs
+Colors
+Mediante: npm install --save yargs colors
