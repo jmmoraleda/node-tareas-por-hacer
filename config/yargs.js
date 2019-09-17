@@ -1,17 +1,17 @@
 const descripcion = {
-    demand: true,
+    demand: true, // Será obligatorio
     alias: 'd',
     desc: 'Descripción de la tarea por hacer'
 };
 
 const completado = {
-    default: true,
+    default: true, // Valor por defecto
     alias: 'c',
     desc: 'Marca como completado o pendiente la tarea'
 };
 
 
-
+// Configuramos los comandos que va a tener la aplicación
 const argv = require('yargs')
     .command('crear', 'Crear un elemento por hacer', {
         descripcion
@@ -26,7 +26,7 @@ const argv = require('yargs')
     .help()
     .argv;
 
-
+// Para poder usarlo desde fuera de este archivo
 module.exports = {
     argv
 }

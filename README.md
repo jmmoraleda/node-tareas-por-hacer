@@ -10,6 +10,4 @@ npm install
 ```
 
 ## Instalaciones hechas
-Yargs
-Colors
-Mediante: npm install --save yargs colors
+Paquetes Yargs y Colors mediante: npm install --save yargs colors

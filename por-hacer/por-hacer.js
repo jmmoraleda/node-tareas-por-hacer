@@ -2,9 +2,10 @@ const fs = require('fs');
 
 let listadoPorHacer = [];
 
+// La función guardará las nuevas tareas en el archivo data.json
 const guardarDB = () => {
 
-    let data = JSON.stringify(listadoPorHacer);
+    let data = JSON.stringify(listadoPorHacer); // Convierto un objeto a un formato JSON válido
 
     fs.writeFile('db/data.json', data, (err) => {
         if (err) throw new Error('No se pudo grabar', err);
@@ -12,13 +13,15 @@ const guardarDB = () => {
 
 }
 
+//  Obtenemos el JSON y lo cargo en listadoPorHacer
 const cargarDB = () => {
 
     try {
 
-        listadoPorHacer = require('../db/data.json');
+        listadoPorHacer = require('../db/data.json'); // El require detecta que es un formato JSON y lo serializa convirtiéndolo en 
+        // un objeto javascript para poder usarlo
 
-    } catch (error) {
+    } catch (error) { // Si no hay datos capturamos el error e inicializamos la lista
         listadoPorHacer = [];
     }
 
@@ -28,7 +31,7 @@ const cargarDB = () => {
 
 const crear = (descripcion) => {
 
-    cargarDB();
+    cargarDB(); // Cargamos los datos anteriores que haya en el json persistente
 
     let porHacer = {
         descripcion,
@@ -37,7 +40,7 @@ const crear = (descripcion) => {
 
     listadoPorHacer.push(porHacer);
 
-    guardarDB();
+    guardarDB(); // Guardamos en el JSON persistente
 
     return porHacer;
 
